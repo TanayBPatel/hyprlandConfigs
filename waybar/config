@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "disk",
+        "pulseaudio",
+        "backlight",
+        "network",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "  {:%a %d %b  %H:%M}"
+    },
+
+    "cpu": {
+        "format": " {usage}%"
+    },
+
+    "memory": {
+        "format": "󰍛 {}%"
+    },
+
+    "disk": {
+        "path": "/",
+        "format": " {percentage_used}%"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{essid}"
+    },
+
+    "battery": {
+        "format": "{capacity}% ",
+        "format-charging": "{capacity}% "
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% ",
+        "format-muted": "󰝟",
+        "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "format": "{percent}% "
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "custom/media": {
+        "format": "{}",
+        "max-length": 40,
+        "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo 'No Media'",
+        "interval": 2,
+        "on-click": "playerctl play-pause"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    }
+}
